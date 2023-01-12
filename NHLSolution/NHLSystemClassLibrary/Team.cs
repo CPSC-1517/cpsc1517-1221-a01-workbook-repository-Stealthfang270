@@ -23,7 +23,7 @@ namespace NhlSystemClassLibrary
                 //Validate name
                 if(String.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(nameof(value), "Name cannot be blank");
+                    throw new ArgumentNullException(nameof(value), "Name cannot be blank.");
                 }
                 _name = value.Trim(); //Trim removes spaces at the front and back
             }
@@ -36,7 +36,7 @@ namespace NhlSystemClassLibrary
                 //Validate name
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(nameof(value), "Name cannot be blank");
+                    throw new ArgumentNullException(nameof(value), "City cannot be blank.");
                 }
                 _city = value.Trim(); //Trim removes spaces at the front and back
             }
@@ -49,7 +49,7 @@ namespace NhlSystemClassLibrary
                 //Validate name
                 if (String.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(nameof(value), "Name cannot be blank");
+                    throw new ArgumentNullException(nameof(value), "Arena cannot be blank.");
                 }
                 _arena = value.Trim(); //Trim removes spaces at the front and back
             }
