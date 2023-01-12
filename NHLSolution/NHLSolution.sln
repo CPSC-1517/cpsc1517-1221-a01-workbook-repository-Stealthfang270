@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLSystemClassLibrary", "NHLSystemClassLibrary\NHLSystemClassLibrary.csproj", "{ED0156CB-1D5B-423F-BA47-3493B8F459BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlSystemClassLibrary", "NhlSystemClassLibrary\NhlSystemClassLibrary.csproj", "{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED0156CB-1D5B-423F-BA47-3493B8F459BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED0156CB-1D5B-423F-BA47-3493B8F459BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED0156CB-1D5B-423F-BA47-3493B8F459BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED0156CB-1D5B-423F-BA47-3493B8F459BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {30C5B1B8-CC9A-4F5F-858E-6A56618E459C}
+		SolutionGuid = {5814BFBC-FFC3-467B-8180-F30156729D5A}
 	EndGlobalSection
 EndGlobal
