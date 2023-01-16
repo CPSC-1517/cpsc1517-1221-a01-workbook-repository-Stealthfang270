@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NhlSystemClassLibrary
@@ -33,10 +34,18 @@ namespace NhlSystemClassLibrary
             get { return _city; }
             set
             {
-                //Validate name
+                //Validate city
                 if (String.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException(nameof(value), "City cannot be blank.");
+                }
+                if(value.Trim().Length < 3)
+                {
+                    throw new ArgumentException("City must contain 3 or more characters.");
+                }
+                if (!Regex.IsMatch(value.Trim(), @"^[a-zA-Z ]+$"))
+                {
+                    throw new ArgumentException("City must only contain english letters.");
                 }
                 _city = value.Trim(); //Trim removes spaces at the front and back
             }
@@ -46,7 +55,7 @@ namespace NhlSystemClassLibrary
             get { return _arena; }
             set
             {
-                //Validate name
+                //Validate arena
                 if (String.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException(nameof(value), "Arena cannot be blank.");
@@ -57,11 +66,11 @@ namespace NhlSystemClassLibrary
 
 
         //Define auto-implemented properties for Conference and Division
-        public string Conference { get; set; }
-        public string Division { get; set; }
+        public Conference Conference { get; set; }
+        public Division Division { get; set; }
 
         // Greedy constructor
-        public Team(string name, string city, string arena, string Conference, string Division)
+        public Team(string name, string city, string arena)
         {
             Name = name;
             City = city;

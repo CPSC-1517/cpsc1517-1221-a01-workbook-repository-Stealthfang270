@@ -14,7 +14,7 @@ namespace NHLSystemTestProject
         public void Name_ValidName_ReturnName(string teamName)
         {
             //Arrange (Create data to test)
-            Team currentTeam = new Team(teamName, "A", "A", "A", "A");
+            Team currentTeam = new Team(teamName, "AAAA", "AAAA");
             //Act
             //Assert
             Assert.AreEqual(teamName, currentTeam.Name);
@@ -28,13 +28,14 @@ namespace NHLSystemTestProject
         {
             try
             {
-                Team currentTeam = new Team(teamName, "A", "A", "A", "A");
+                Team currentTeam = new Team(teamName, "AAAA", "AAAA");
                 Assert.Fail("An ArgumentNullException should have been thrown");
             }
             catch(ArgumentNullException ex)
             {
                 StringAssert.Contains(ex.Message, exceptedErrorMessage);
             }
+            
         }
 
         [TestMethod]
@@ -47,7 +48,7 @@ namespace NHLSystemTestProject
         public void City_ValidCity_ReturnCity(string teamCity)
         {
             //Arrange (Create data to test)
-            Team currentTeam = new Team("A", teamCity, "A", "A", "A");
+            Team currentTeam = new Team("AAAA", teamCity, "AAAA");
             //Act
             //Assert
             Assert.AreEqual(teamCity, currentTeam.City);
@@ -57,14 +58,20 @@ namespace NHLSystemTestProject
         [DataRow(null, "City cannot be blank.")]
         [DataRow("", "City cannot be blank.")]
         [DataRow("    ", "City cannot be blank.")]
+        [DataRow("a", "City must contain 3 or more characters.")]
+        [DataRow("1234", "City must only contain english letters.")]
         public void City_InvalidCity_ThrowsArgumentNullException(string teamCity, string exceptedErrorMessage)
         {
             try
             {
-                Team currentTeam = new Team("A", teamCity, "A", "A", "A");
-                Assert.Fail("An ArgumentNullException should have been thrown");
+                Team currentTeam = new Team("AAAA", teamCity, "AAAA");
+                Assert.Fail("An ArgumentException or ArgumentNullException should have been thrown");
             }
             catch (ArgumentNullException ex)
+            {
+                StringAssert.Contains(ex.Message, exceptedErrorMessage);
+            }
+            catch (ArgumentException ex)
             {
                 StringAssert.Contains(ex.Message, exceptedErrorMessage);
             }
@@ -80,7 +87,7 @@ namespace NHLSystemTestProject
         public void Arena_ValidArena_ReturnArena(string teamArena)
         {
             //Arrange (Create data to test)
-            Team currentTeam = new Team("A", "A", teamArena, "A", "A");
+            Team currentTeam = new Team("AAAA", "AAAA", teamArena);
             //Act
             //Assert
             Assert.AreEqual(teamArena, currentTeam.Arena);
@@ -94,7 +101,7 @@ namespace NHLSystemTestProject
         {
             try
             {
-                Team currentTeam = new Team("A", "A", teamArena, "A", "A");
+                Team currentTeam = new Team("AAAA", "AAAA", teamArena);
                 Assert.Fail("An ArgumentNullException should have been thrown");
             }
             catch (ArgumentNullException ex)
