@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using NhlSystemClassLibrary;
 
 namespace NhlSystemClassLibrary
 {
@@ -69,12 +70,34 @@ namespace NhlSystemClassLibrary
         public Conference Conference { get; set; }
         public Division Division { get; set; }
 
+        public List<Player> Players { get; private set; } = new List<Player>();
+
         // Greedy constructor
         public Team(string name, string city, string arena)
         {
             Name = name;
             City = city;
             Arena = arena;
+        }
+
+        public void AddPlayer(Player currentPlayer)
+        {
+            if(currentPlayer == null)
+            {
+                throw new ArgumentNullException(nameof(AddPlayer),"Player cannot be null");
+            }
+            foreach(Player player in Players)
+            {
+                if(player.PlayerNum == currentPlayer.PlayerNum)
+                {
+                    throw new ArgumentException($"{currentPlayer.PlayerNum} is already in the team as {player.Name}'s number");
+                }
+            }
+            if(Players.Count == 23)
+            {
+                throw new ArgumentException("Team is already full!");
+            }
+            Players.Add(currentPlayer);
         }
     }
 }

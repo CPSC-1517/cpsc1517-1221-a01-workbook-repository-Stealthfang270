@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NhlSystemClassLibrary;
 
 namespace NhlSystemClassLibrary
 {
-    internal class Player
+    public class Player
     {
+        const int MinPlayerNum = 1;
+        const int MaxPlayerNum = 98;
+
         private int _playerNum;
         private string _name;
         private int _gamesPlayed;
@@ -22,9 +26,9 @@ namespace NhlSystemClassLibrary
             {
                 return _playerNum;
             }
-            set
+            private set
             {
-                if (value < 1 || value > 98)
+                if (!Utils.NumInRange(value, MinPlayerNum, MaxPlayerNum))
                 {
                     throw new ArgumentException("Number must be between 1 and 98");
                 }
@@ -35,7 +39,7 @@ namespace NhlSystemClassLibrary
         public string Name
         {
             get { return _name; }
-            set
+            private set
             {
                 if (String.IsNullOrWhiteSpace(value))
                 {
@@ -46,24 +50,42 @@ namespace NhlSystemClassLibrary
         }
 
 
-        public Position Position { get; set; }
+        public Position Position { get; private set; }
 
         public int GamesPlayed
         {
             get { return _gamesPlayed; }
-            set { PositiveNum(value, "Games played"); }
+            protected set
+            {
+                if (!Utils.NumInRange(value, 0, int.MaxValue))
+                {
+                    throw new ArgumentException("Games Played must be a positive number");
+                }
+            }
         }
 
         public int Goals
         {
             get { return _goals; }
-            set { PositiveNum(value, "Goals"); }
+            private set
+            {
+                if (!Utils.NumInRange(value, 0, int.MaxValue))
+                {
+                    throw new ArgumentException("Goals must be a positive number");
+                }
+            }
         }
 
         public int Assists
         {
             get { return _assists; }
-            set { PositiveNum(value, "Assists"); }
+            private set
+            {
+                if (!Utils.NumInRange(value, 0, int.MaxValue))
+                {
+                    throw new ArgumentException("Assists must be a positive number");
+                }
+            }
         }
 
         public int Points
@@ -81,16 +103,24 @@ namespace NhlSystemClassLibrary
             Assists = assists;
         }
 
-        private static int PositiveNum(int num, string numName)
+        public Player(int playerNum, string name, Position position)
         {
-            if(num >= 0)
-            {
-                return num;
-            }
-            else
-            {
-                throw new ArgumentException($"{numName} must be a positive number");
-            }
+            PlayerNum = playerNum;
+            Name = name;
+            Position = position;
+        }
+
+        public void AddGamesPlayed()
+        {
+            GamesPlayed++;
+        }
+        public void AddGoals()
+        {
+            Goals++;
+        }
+        public void AddAssist()
+        {
+            Assists++;
         }
     }
 }
