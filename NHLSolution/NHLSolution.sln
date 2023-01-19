@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhlSystemClassLibrary", "NhlSystemClassLibrary\NhlSystemClassLibrary.csproj", "{EE5A451C-72DD-44CA-82B1-F411C3CD2C02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLConsoleApp", "NHLConsoleApp\NHLConsoleApp.csproj", "{B8B4D9A6-2F0F-472F-A874-AD2D4EBD1A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHLConsoleApp", "NHLConsoleApp\NHLConsoleApp.csproj", "{B8B4D9A6-2F0F-472F-A874-AD2D4EBD1A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHLSystemTestProject", "NHLSystemTestProject\NHLSystemTestProject.csproj", "{E3F5FD91-D07D-4529-AB4F-D6FF9BC42142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NHLSystemTestProject", "NHLSystemTestProject\NHLSystemTestProject.csproj", "{E3F5FD91-D07D-4529-AB4F-D6FF9BC42142}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
