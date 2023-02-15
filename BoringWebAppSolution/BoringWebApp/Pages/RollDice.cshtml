@@ -1,0 +1,21 @@
+﻿@page
+@model BoringWebApp.Pages.RollDiceModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2 style="color: red">Hello World</h2>
+
+    <p>You rolled a @Model.Dice</p>
+
+    <img src="@Model.DicePath" alt="Dice Image"
+    width="200"
+    height="200"/>
+
+    <form method="post">
+        <button type="submit" class="btn btn-primary">Roll Dice</button>
+    </form>
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h2 style="color: red">Hello World</h2>
+
+    <p>The current date time is @Model.CurrentDateTime.ToString("MMM dd, yyyy, hh:mm")</p>
+    <p>The lcuky number @Model.LuckyNumber</p>
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
