@@ -99,5 +99,14 @@ namespace NhlSystemClassLibrary
             }
             Players.Add(currentPlayer);
         }
+
+        public void PrintTeamInfo()
+        {
+            Console.WriteLine($"Team name: {Name}, Team city: {City}, Team arena: {Arena}, Team players: ");
+            foreach (Player player in Players)
+            {
+                Console.WriteLine($"Number: {player.PlayerNum}, Name: {player.Name}, Position: {player.Position}, Games Played: {player.GamesPlayed}, Goals: {player.Goals}, Assists: {player.Assists}");
+            }
+        }
     }
 }

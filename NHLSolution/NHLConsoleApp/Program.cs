@@ -5,7 +5,10 @@
     {
         static void Main(string[] args)
         {
+            const string FilePath = @"../../../Players.csv";
             
+            Team team = Player.ReadPlayerDataFromCsv(FilePath);
+            team.PrintTeamInfo();
         }
     }
 }
