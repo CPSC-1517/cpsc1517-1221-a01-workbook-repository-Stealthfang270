@@ -13,9 +13,28 @@
     width="200"
     height="200"/>
 
+    <p>@Model.InfoMessage</p>
+
     <form method="post">
+
+        <label for="Bet">Bet Amount</label>
+
+        <input type="number" class="form-text" name="Bet" id="Bet"/>
+
         <button type="submit" class="btn btn-primary">Roll Dice</button>
+
+        <label for="DiceSelect">Number to Bet</label>
+        <select class="form-select" name="DiceSelect" id="DiceSelect">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+            <option value="6">Six</option>
+        </select>
     </form>
+
+    
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

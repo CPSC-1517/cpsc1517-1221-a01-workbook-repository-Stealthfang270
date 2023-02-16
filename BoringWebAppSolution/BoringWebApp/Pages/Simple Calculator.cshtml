@@ -1,0 +1,35 @@
+﻿@page
+@model BoringWebApp.Pages.Simple_CalculatorModel
+@{
+}
+
+<div class="text-center">
+
+    <h1>Simple Calculator</h1>
+
+    <form method="post">
+
+        <label asp-for="Num1">Number 1</label>
+        <input type="number" name="Num1" id="Num1" />
+
+        <label asp-for="Num2">Number 2</label>
+        <input type="number" name="Num2" id="Num2" />
+
+        <div>
+            <label for="Add">Add</label>
+            <button type="submit" name="Add" id="Add" asp-page-handler="Add">Button</button>
+
+            <label for="Subtract">Subtract</label>
+            <button type="submit" name="Subtract" id="Subtract" asp-page-handler="Subtract">Button</button>
+
+            <label for="Multiply">Multiply</label>
+            <button type="submit" name="Multiply" id="Multiply" asp-page-handler="Multiply">Button</button>
+
+            <label for="Divide">Divide</label>
+            <button type="submit" name="Divide" id="Divide" asp-page-handler="Divide">Button</button>
+        </div>
+
+    </form>
+    <p>@Model.InfoMessage</p>
+
+</div>

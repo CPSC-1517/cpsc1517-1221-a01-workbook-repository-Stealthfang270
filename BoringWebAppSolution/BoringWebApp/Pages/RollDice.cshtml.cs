@@ -5,8 +5,9 @@ namespace BoringWebApp.Pages
 {
     public class RollDiceModel : PageModel
     {
+        
 
-        public int Dice { get; private set; } = 0;
+        public int Dice { get; private set; } = 1;
         public string[] DicePaths { get; private set; } =
         {
             "img/dice1.png",
@@ -18,6 +19,15 @@ namespace BoringWebApp.Pages
         };
 
         public string DicePath { get; private set; }
+
+        [BindProperty]
+        public int Bet { get; set; }
+
+        [BindProperty]
+        public int DiceSelect { get; set; }
+        
+
+        public string InfoMessage { get; set; }
 
         public void OnGet()
         {
@@ -31,6 +41,17 @@ namespace BoringWebApp.Pages
             Dice = random.Next(1, 7);
 
             DicePath = DicePaths[Dice - 1];
+
+            if(Bet < 5) { Bet = 5; }
+
+            if (DiceSelect == Dice)
+            {
+                InfoMessage = $"Your bet was {DiceSelect}. The number is {Dice}. You win ${Bet:0.00}";
+            }
+            else
+            {
+                InfoMessage = $"Your bet was {DiceSelect}. The number is {Dice}. You lose ${Bet:0.00}";
+            }
         }
     }
 }
